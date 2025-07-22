@@ -1,91 +1,124 @@
 # Grocery Store Operations Optimization via Agent-Based Modeling
 
-This project implements an agent-based model of a grocery store using NetLogo. It aims to simulate, visualize, and optimize various operational processes of a grocery environment including staffing, customer flow, inventory restocking, checkout processes, waste reduction, and queue management.
+This project implements an agent-based model of a grocery store using NetLogo. It simulates, visualizes, and optimizes key operational processes such as customer flow, staffing, inventory restocking, checkout management, waste reduction, and queue handling.
 
 ## Features
 
 ✅ Simulation of multiple store departments  
 ✅ Time-based staff shifts and break management  
-✅ Customer shopping, queuing, and checkout behavior  
-✅ Restocking and waste handling  
-✅ Queue management and cashier utilization  
-✅ Inventory expiry and discount mechanisms  
-✅ Visualization of store operations with plots and color-coded patches  
-✅ Store opening and forced closing after specified hours  
-✅ Manager monitoring of busy cashiers  
-✅ Support staff including cleaners, packers, stockers, produce staff, and butchers  
-✅ Agent behaviors for efficient resource allocation  
-✅ Dynamic reporting at store closure
+✅ Customer shopping, queuing, checkout, and exit verification  
+✅ Restocking, inventory expiry, and waste handling  
+✅ Discounting near-expiry items  
+✅ Queue management and cashier workload optimization  
+✅ Visual dashboards with real-time plots and color-coded areas  
+✅ Store opening and closing protocols  
+✅ Manager interventions on queue congestion  
+✅ Support staff roles: cleaners, packers, stockers, produce staff, butchers  
+✅ Smart agent behaviors for efficient resource allocation  
+✅ End-of-day performance reports and statistics  
 
 ## Agents
 
 - **Customers**  
-  - Enter the store at opening time  
-  - Browse items and queue for checkout  
-  - Seek help from produce or butcher staff  
-  - Forced to exit the store at closing time
+  - Arrive at store opening  
+  - Browse, request assistance, queue, checkout  
+  - Undergo receipt verification at exit  
+  - Leave store after verification or upon forced closure
 
 - **Cashiers**  
-  - Process customer payments  
-  - Go on break according to shift rules  
-  - Record total sales per cashier
-
-- **Stockers**  
-  - Restock shelves during store hours and night restocking
+  - Handle customer checkouts  
+  - Take breaks based on shift rules  
+  - Track individual and total sales
 
 - **Packers**  
-  - Assist customers in packing purchased goods
+  - Bag items after cashier scanning
+
+- **Stockers**  
+  - Restock products on shelves throughout the day and at night
 
 - **Cleaners**  
-  - Monitor and clean spills
+  - Clean spills and maintain safety
 
 - **Produce & Butcher Staff**  
-  - Assist customers  
-  - Monitor perishable items and apply discounts before expiry
+  - Assist customers with specific department requests  
+  - Monitor and discount perishable goods
 
 - **Managers**  
-  - Monitor overcrowded queues and deploy interventions
+  - Monitor overcrowded queues and trigger staff responses
+
+- **Exit Verifiers**  
+  - Check customer receipts at the exit to ensure purchase validation
 
 ## Store Phases
 
-The simulation divides store operations into logical phases:
+The simulation covers a comprehensive customer journey and store lifecycle:
 
-1. **Store Preparation** — pre-opening stocking and staff arrival  
-2. **Customer Journey** — browsing, queuing, and payment behavior  
-3. **Core Operational Processes** — checkout, restocking, packing  
-4. **Support Operations** — spills, expiry checks, break management  
-5. **Closing Operations** — final restocking, closing cash registers, cleaning  
+1. **Store Preparation**  
+   - Staff arrival and shelf restocking
 
-## Plots
+2. **Customer Journey**  
+   - Entry → Product Selection  
+   - (Optional) Department Assistance → Butcher or Produce Help  
+   - Queueing → Checkout → Packing  
+   - **Exit Verification**  
+   - Exit
 
-The model includes several plots to monitor:
+3. **Operational Processes**  
+   - Cashier scanning and bagging  
+   - Inventory restocking and waste handling  
+   - Spill detection and cleaning  
+   - Manager decision-making for crowd control  
+   - Shift changes and staff breaks
 
-- Restocks vs Waste  
-- Queue Length Over Time  
-- Cashier Utilization  
-- Payments Over Time  
-- Customers in Store Over Time  
-- Staff on Break Over Time
+4. **Closing Operations**  
+   - Forced customer exit  
+   - Final restock  
+   - Cleanup and shutdown reporting
+
+## Customer Path Examples
+
+- **Full Service:**  
+  `Entry → Product Selection → Department Assistance → Butcher Help → Checkout → Packing → Payment → Exit Verification → Exit`
+
+- **Produce Help Only:**  
+  `Entry → Product Selection → Department Assistance → Produce Help → Checkout → Packing → Payment → Exit Verification → Exit`
+
+- **Quick Shop:**  
+  `Entry → Product Selection → Checkout → Packing → Payment → Exit Verification → Exit`
+
+## Plots and Metrics
+
+Real-time monitoring of key performance indicators:
+
+- 📦 **Restocks vs. Waste**  
+- 👥 **Queue Length Over Time**  
+- 💳 **Payments Processed**  
+- 🧍‍♀️ **Customers in Store**  
+- 😵 **Staff on Break**  
+- 🧮 **Cashier Utilization**  
+- ✅ **Exit Verifications Completed**  
+- 📊 **Daily Sales per Cashier**  
 
 ## How to Run
 
-1. Install [NetLogo](https://ccl.northwestern.edu/netlogo/).  
-2. Load the `.nlogo` file in the NetLogo GUI.  
-3. Click `Setup` to initialize the store.  
-4. Click `Go` to start the simulation.  
-5. Observe the plots and behaviors of customers and staff agents.  
-6. Adjust parameters if desired for experimentation.
+1. Download and install [NetLogo](https://ccl.northwestern.edu/netlogo/).  
+2. Open the `.nlogo` simulation file in the NetLogo GUI.  
+3. Click `Setup` to initialize the environment.  
+4. Click `Go` to begin the simulation loop.  
+5. Observe agent behavior, real-time plots, and experiment with parameters.  
 
 ## Optimization Goals
 
-This simulation helps explore:
+Use this simulation to explore:
 
-- Optimizing staff schedules  
-- Managing queues to reduce customer abandonment  
-- Balancing restocking frequency vs waste  
-- Designing customer flow layouts  
-- Minimizing store closure delays  
+- Efficient staff shift and break scheduling  
+- Reducing checkout queue abandonment  
+- Minimizing waste while maintaining availability  
+- Evaluating layout impact on customer flow  
+- Verifying purchases to reduce loss prevention issues  
+- Planning staffing ratios across departments  
 
 ---
 
-**Happy modeling!** 🚀  
+**Happy modeling!** 🛒🧠  
+Optimizing retail, one agent at a time.
